@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floral Concept - Jeu Concours Saint Valentin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #FF6D7F;
+            color: white;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-img {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: cover;
+        }
+
+        label,
+        input {
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        input[type="tel"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #FF6D7F;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #FF3D5A;
+        }
+
+        .prizes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .prize-img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Floral Concept - Jeu Concours Saint Valentin</h1>
+    <div class="container">
+        <img src="header.png" alt="Image d'en-tête" class="header-img">
+        <p>Participez à notre jeu concours et tentez de gagner des bons d'achat et une Renault Clio rouge !</p>
+        <div class="prizes">
+            <img src="bonachat.jpg" alt="Bon d'achat" class="prize-img">
+            <img src="clio4rouge.jpg" alt="Renault Clio Rouge" class="prize-img">
+        </div>
+        <form id="jeu-concours-form">
+            <label for="telephone">Entrez votre numéro de téléphone pour participer:</label>
+            <input type="tel" id="telephone" name="telephone" pattern="[0-9]{10}" required>
+            <input type="submit" value="Participer">
+        </form>
+        <p id="message" style="display:none;">Merci de votre participation !</p>
+    </div>
+
+    <script>
+        document.getElementById('jeu-concours-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            document.getElementById('jeu-concours-form').style.display = 'none';
+            document.getElementById('message').style.display = 'block';
+        });
+    </script>
+</body>
+
+</html>
